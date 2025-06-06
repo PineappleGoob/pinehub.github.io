@@ -62,7 +62,7 @@ padding-left: 20px; /* optional, for some left margin */
     transform: translateY(100px);
   }
   .box {
-    height: 140vh;
+    height: auto;
     background: rgb(0, 0, 0);
     color: white;
     display: flex;
