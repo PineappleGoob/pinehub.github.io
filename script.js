@@ -1,25 +1,45 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
+const chars = [...document.querySelectorAll('.char')];
+let index = 0;
+let busy = false;
+
+function updatePositions() {
+  chars.forEach((el, i) => {
+    el.classList.remove('active', 'left', 'right');
+    if (i === index) {
+      el.classList.add('active');
+    } else if (i === (index - 1 + chars.length) % chars.length) {
+      el.classList.add('left');
+    } else if (i === (index + 1) % chars.length) {
+      el.classList.add('right');
+    } else {
+      el.style.opacity = 0;
     }
   });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.scroll-fade').forEach(el => {
-  observer.observe(el);
-});
-
-
-
-
-document.querySelector('.hero').addEventListener('click', () => {
-    alert("hah you tapped something");
-  });
-function ButtonAppear() {
-
-  const element = document.getElementById('fadeElement');
-  element.classList.add('visible'); // This will trigger the fade-in
 }
 
 
+window.addEventListener('click', e => {
+  if (busy) return;
+  if (index == 1) { //about me
+window.location.href = "/aboutme/index.html"
+  }
+  else if (index == 2) { //coming soon
+window.location.href = "/aboutme/index.html"
+  }
+});
+
+window.addEventListener('wheel', e => {
+  if (busy) return;
+  busy = true;
+  const direction = Math.sign(e.deltaY);
+  if (direction === 0) return;
+
+  const next = (index + direction + chars.length) % chars.length; //should probably figure out why it uses chars.length idk mrgpt said so soooooooooooo yoink
+  index = next;
+  updatePositions();
+
+  setTimeout(() => busy = false, 500);
+});
+
+//startup processussusus
+updatePositions();

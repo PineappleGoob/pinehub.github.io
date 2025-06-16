@@ -1,0 +1,53 @@
+html, body {
+  height: 100%; margin: 0;
+  overflow: hidden;
+  background: #111;
+  font-family: sans-serif;
+  color: #eee;
+}
+
+#roster {
+  position: relative;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.char {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  text-align: center;
+  pointer-events: none;
+}
+.char img {
+  width: 30vmin;
+  display: block;
+  margin: 0 auto 1rem;
+  filter: grayscale(100%) brightness(0.7);
+  transition: filter 0.5s ease;
+}
+
+.char.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+.char.active img {
+  filter: none;
+}
+
+.char.left, .char.right {
+  opacity: 0.4;
+  z-index: 1;
+}
+.char.left {
+  transform: translate(-150%, -50%) scale(0.8);
+}
+.char.right {
+  transform: translate(50%, -50%) scale(0.8);
+}
