@@ -1,6 +1,9 @@
 const chars = [...document.querySelectorAll('.char')];
 let index = 0;
 let busy = false;
+let startX = 0;
+let endX = 0;
+const threshold = 50; // Minimum distance for a swipe
 
 function updatePositions() {
   chars.forEach((el, i) => {
@@ -39,6 +42,41 @@ window.addEventListener('wheel', e => {
   updatePositions();
 
   setTimeout(() => busy = false, 500);
+});
+
+window.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+window.addEventListener('touchend', (e) => {
+  if (busy) return;
+  busy = true;
+ endX = e.changedTouches[0].clientX;
+  const diff = endX - startX;
+
+
+  if (index == 1) { //about me
+window.location.href = "/aboutme/index.html"
+  }
+  else if (index == 2) { //coming soon
+window.location.href = "/aboutme/index.html"
+  }
+
+  if (Math.abs(diff) > threshold) {
+    if (diff > 0) {
+      console.log('Swipe Right');
+      const next = (index + -1 + chars.length) % chars.length;
+      index = next;
+      updatePositions();
+      setTimeout(() => busy = false, 500);
+    } else {
+      console.log('Swipe Left');
+      const next = (index + 1 + chars.length) % chars.length;
+      index = next;
+      updatePositions();
+      setTimeout(() => busy = false, 500);
+    }
+  }
 });
 
 //startup processussusus
