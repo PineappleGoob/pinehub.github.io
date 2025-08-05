@@ -29,6 +29,9 @@ window.location.href = "/aboutme/index.html"
   else if (index == 2) { //coming soon
 window.location.href = "/aboutme/index.html"
   }
+  else if (index == 0) { //skills
+window.location.href = "/skills/index.html"
+  }
 });
 
 window.addEventListener('wheel', e => {
@@ -81,3 +84,4 @@ window.location.href = "/aboutme/index.html"
 
 //startup processussusus
 updatePositions();
+
