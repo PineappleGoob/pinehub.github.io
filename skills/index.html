@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2550226982131064"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pinehub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="roster">
+
+  <a><div class="char active"><img src="images/html.png"><h2 style="font-size: 50px;">Html</h2></div></a>
+  <div class="char"><img src="images/python.png"><h2 style="font-size: 50px;">Python</h2></div>
+  <div class="char"><img src="images/javascript.png"><h2 style="font-size: 50px;">Javascript</h2></div>
+  <!--left thing-->
+  <a><div class="charr active"><div class="circle" id="progress-circle"><h1 class="textcir" style="font-size: 50px;" id="percentage">90%</h1></div> </div></a>
+  <div class="charr"><div class="circle" id="progress-circle"><h1 class="textcir" style="font-size: 50px;" id="percentage">100%</h1></div></div>
+  <div class="charr"><div class="circle" id="progress-circle"><h1 class="textcir" style="font-size: 50px;" id="percentage">51%</h1></div></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  function dothe() {    
+    
+    const percentageText = document.getElementById("percentage").innerText;
+    const percentageValue = parseInt(percentageText);
+    document.getElementById("progress-circle").style.setProperty('--percentage', `${percentageValue}%`);
+    document.getElementById("progress-circle").id = "modified";
+    document.getElementById("percentage").id = "modified";
+    
+}
+let counter = 0;
+const items = 20;
+while (counter < items) {
+    dothe();
+    counter++;
+}
+</script>
+</body>
+</html>
