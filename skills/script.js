@@ -77,6 +77,8 @@ window.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
 });
 
+//testtetstestst
+
 window.addEventListener('touchend', (e) => {
   if (busy) return;
   busy = true;
