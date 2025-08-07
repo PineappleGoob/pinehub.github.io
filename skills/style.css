@@ -29,6 +29,13 @@ html, body {
 text-shadow: 0 0 40px rgb(97, 97, 97), 0 0 120px rgb(141, 153, 161);
 }
 
+.gridmaker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
 #roster {
   position: relative;
   width: 100%;
@@ -121,6 +128,9 @@ text-shadow: 0 0 40px rgb(97, 97, 97), 0 0 120px rgb(141, 153, 161);
 }
 .char.right {
   transform: translate(50%, -50%) scale(0.8);
+}
+.char.farright {
+  transform: translate(100%, -50%) scale(0.8);
 }
 
 .circle {
