@@ -121,7 +121,7 @@ text-shadow: 0 0 40px rgb(97, 97, 97), 0 0 120px rgb(141, 153, 161);
 
 /*.char.left, .char.right {
   opacity: 0.4;
-  z-index: 1;
+  z-index: 1;fdf
 }*/
 .char.left {
   transform: translate(-150%, -50%) scale(0.8);
