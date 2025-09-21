@@ -58,12 +58,7 @@ window.addEventListener('touchend', (e) => {
   const diff = endX - startX;
 
 
-  if (index == 1) { //about me
-window.location.href = "/aboutme/index.html"
-  }
-  else if (index == 2) { //coming soon
-window.location.href = "/aboutme/index.html"
-  }
+
 
   if (Math.abs(diff) > threshold) {
     if (diff > 0) {
@@ -79,9 +74,17 @@ window.location.href = "/aboutme/index.html"
       updatePositions();
       setTimeout(() => busy = false, 500);
     }
+else if (Math.abs(diff) > threshold - 40) {
+    if (index == 1) { //about me
+window.location.href = "/aboutme/index.html"
+  }
+  else if (index == 2) { //coming soon
+window.location.href = "/aboutme/index.html"
+  }
   }
 });
 
 //startup processussusus
 updatePositions();
+
 
