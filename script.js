@@ -67,24 +67,25 @@ window.addEventListener('touchend', (e) => {
       index = next;
       updatePositions();
       setTimeout(() => busy = false, 500);
-    } else {
+    }; else {
       console.log('Swipe Left');
       const next = (index + 1 + chars.length) % chars.length;
       index = next;
       updatePositions();
       setTimeout(() => busy = false, 500);
-    }
+    };
 else if (Math.abs(diff) > threshold - 40) {
     if (index == 1) { //about me
 window.location.href = "/aboutme/index.html"
-  }
+  };
   else if (index == 2) { //coming soon
 window.location.href = "/aboutme/index.html"
-  }
+  };
   }
 });
 
 //startup processussusus
 updatePositions();
+
 
 
